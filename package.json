@@ -4,8 +4,10 @@
   "description": "chat for yandex.practicum",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel static/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel static/index.html -p 3000",
+    "dev": "parcel static/index.html -p 3000 --open",
+    "build": "parcel build static/index.html --no-minify",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,12 @@
   },
   "homepage": "https://github.com/WizeOneR/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
     "express": "^4.17.1",
     "handlebars": "^4.7.7",
-    "normalize.css": "^8.0.1",
-    "parcel": "^2.0.1",
+    "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
-    "scss": "^0.2.4"
+    "path": "^0.12.7",
+    "postcss": "^8.3.11",
+    "sass": "^1.43.4"
   }
 }

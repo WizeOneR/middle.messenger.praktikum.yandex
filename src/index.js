@@ -1,3 +1,5 @@
+import './styles/style.scss';
+
 import {renderMainForm} from "./pages/main/main";
 import {renderError} from "./pages/error/error";
 import {renderAuthForm} from "./pages/auth/auth";
