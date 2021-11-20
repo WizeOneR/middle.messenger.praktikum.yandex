@@ -21,4 +21,6 @@ https://www.figma.com/file/fjnZB1M5t2jDbnnDXh1biG/chat?node-id=8%3A176
 
 ## PR
 
-Sprint 1: 
+Sprint 1:
+
+https://github.com/WizeOneR/middle.messenger.praktikum.yandex/pull/1
