@@ -1,0 +1,24 @@
+<div class="user-profile">
+    <div class="user-profile__wrapper">
+        <section class="user-profile__main">
+            <div class="user-profile__image">
+                {{>userImage}}
+            </div>
+            <div class="user-profile__name">{{userFullName}}</div>
+        </section>
+
+        <div class="user-profile__inputs">
+            {{#each inputs}}
+                {{>input inputContext}}
+            {{/each}}
+        </div>
+
+        {{#if links}}
+            <div class="user-profile__links">
+                {{#each links}}
+                    <a class="user-profile__link {{class}}" href="{{url}}" target="_self">{{linkName}}</a>
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</div>

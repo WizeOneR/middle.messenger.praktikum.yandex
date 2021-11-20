@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 52px;
+  height: 100%;
+  background-color: $primary-main-dark;
+  padding: 8px;
+
+
+  &__profile-image {
+    margin-bottom: 8px;
+  }
+
+  &__button {
+    background-image: url('../../../static/icons/settings.svg');
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 36px;
+    height: 36px;
+    @include cursor;
+    transition: .3s;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}

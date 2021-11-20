@@ -1,0 +1,5 @@
+import './input.scss';
+import template from './input.hbs';
+import Handlebars from 'handlebars/dist/handlebars.runtime';
+
+Handlebars.registerPartial('input', template);

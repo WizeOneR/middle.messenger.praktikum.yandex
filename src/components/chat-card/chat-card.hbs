@@ -1,0 +1,17 @@
+<div class="chat-card">
+    {{>userImage}}
+
+    <div class="chat-card__description">
+        <div class="chat-card__user-name">{{userName}}</div>
+
+        {{#if message}}
+            <div class="chat-card__message">{{message}}</div>
+        {{/if}}
+    </div>
+
+    <div class="chat-card__additional">
+        {{#if unreadCount}}
+            <div class="counter">{{unreadCount}}</div>
+        {{/if}}
+    </div>
+</div>

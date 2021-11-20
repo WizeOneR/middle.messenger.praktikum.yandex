@@ -1,0 +1,41 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 8px;
+    font-size: 1rem;
+    color: $primary-input-dark;
+    transition: .3s;
+    z-index: 1000;
+  }
+
+  &__input:focus ~ .input__label,
+  &__input:not(:placeholder-shown) ~ .input__label {
+    top: -1rem;
+    font-size: 12px;
+  }
+
+  &__input {
+    padding: 4px 0;
+    color: $primary-dark;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid $primary-dark;
+    z-index: 1001;
+
+    &:focus {
+      border-color: $primary-input-dark;
+    }
+  }
+}

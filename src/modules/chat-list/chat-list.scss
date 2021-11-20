@@ -1,0 +1,41 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.chat-list {
+  width: 500px;
+  height: 100%;
+  background-color: $primary-dark;
+
+
+  &__wrapper {
+    height: calc(100vh - 52px);
+    overflow-y: hidden;
+    padding-right: 5px;
+
+    &:hover {
+      overflow-y: auto;
+      padding-right: 0;
+    }
+
+    &::-webkit-scrollbar {
+      position: absolute;
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include border-radius;
+      background-color: $neutrals-light;
+    }
+  }
+
+  &__list {
+    @include border-radius;
+    background-color: $primary-light;
+    margin: 0 .5rem .5rem .5rem;
+    width: calc(500px - 1rem);
+
+    & > .chat-card:not(:last-child) {
+      border-bottom: 1px solid $neutrals-light;
+    }
+  }
+}
