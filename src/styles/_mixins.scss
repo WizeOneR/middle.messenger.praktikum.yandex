@@ -1,0 +1,15 @@
+@mixin box-shadow {
+  box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+}
+
+@mixin border-radius {
+  border-radius: 4px;
+}
+
+@mixin cursor {
+  cursor: pointer;
+}
+
+@mixin opacity {
+  opacity: .8;
+}
