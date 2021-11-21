@@ -4,7 +4,7 @@ import './../../modules/chat-list/chat-list'
 import './../../modules/message-list/message-list'
 import avatar from './../../../static/images/user_image.jpg';
 import template from './chat.hbs';
-import {chats, messages} from "./const"
+import {chats, messages} from './const';
 
 const data = {
     sidebarContext: {

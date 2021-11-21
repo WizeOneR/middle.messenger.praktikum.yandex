@@ -1,4 +1,4 @@
-import avatar from "../../../static/images/user_image.jpg";
+import avatar from '../../../static/images/user_image.jpg';
 
 export const userProfileFormData = {
     avatar,
