@@ -1,4 +1,5 @@
 import './styles/style.scss';
+import 'normalize.css';
 
 import {renderMainForm} from './pages/main/main';
 import {renderError} from './pages/error/error';
