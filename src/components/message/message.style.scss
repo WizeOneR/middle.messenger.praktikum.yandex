@@ -1,0 +1,39 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.message {
+  position: relative;
+  margin-top: 1rem;
+  margin-right: auto;
+  max-width: 500px;
+  color: $primary-font-light;
+  padding: 1rem 2rem 2rem 1rem;
+  background-color: rgba($primary-font-mid, .3);
+  @include border-radius;
+
+  &__text {
+    line-height: 1.3rem;
+  }
+
+  &--myself {
+    background-color: rgba($primary-font-mid, .8);
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__timestamp {
+    position: absolute;
+    font-size: 10px;
+    bottom: 8px;
+    right: 8px;
+    opacity: .5;
+  }
+}
+
+@media (min-width: 1600px) {
+  .message {
+    &--myself {
+      margin-left: 0;
+    }
+  }
+}

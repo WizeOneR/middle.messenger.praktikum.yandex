@@ -1,0 +1,9 @@
+<div class="user-image {{avatarSize}}">
+    {{#if avatar}}
+        <img class="user-image__image" src="{{avatar}}">
+    {{else}}
+        {{#if userName}}
+            <div class="user-image__plug">{{userName.[0]}}</div>
+        {{/if}}
+    {{/if}}
+</div>

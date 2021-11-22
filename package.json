@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel static/index.html -p 3000",
-    "dev": "parcel static/index.html -p 3000 --open",
-    "build": "parcel build static/index.html --no-minify",
-    "server": "node server.js"
+    "dev": "parcel static/index.html --no-cache -p 3000",
+    "build": "parcel build static/index.html --no-cache --no-minify",
+    "server": "node server.js",
+    "lint:es": "eslint --fix \"src/**/*.{ts,js}\"",
+    "lint:es:ci": "eslint --format ./node_modules/eslint-teamcity/index.js \"src/**/*.{ts,js}\"",
+    "lint:scss": "stylelint --config .stylelintrc --fix \"src/**/*.scss\"",
+    "lint:scss:ci": "stylelint --config .stylelintrc --custom-formatter=node_modules/stylelint-teamcity-reporter \"src/**/*.scss\""
   },
   "repository": {
     "type": "git",
@@ -23,15 +27,20 @@
   },
   "homepage": "https://github.com/WizeOneR/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@tinkoff/linters": "^1.0.0-rc.13",
+    "@types/handlebars": "^4.1.0",
     "express": "^4.17.1",
-    "handlebars": "^4.7.7",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "path": "^0.12.7",
     "postcss": "^8.3.11",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "typescript": "^4.5.2",
+    "handlebars": "^4.7.7"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@types/uuid": "^8.3.3",
+    "normalize.css": "^8.0.1",
+    "uuid": "^8.3.2"
   }
 }
