@@ -1,0 +1,56 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.user-profile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 600px;
+    height: 100%;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    text-align: center;
+    color: $primary-font-light;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    text-align: left;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $primary-font-mid;
+
+    @include cursor;
+
+    &:hover {
+      @include opacity;
+    }
+
+    &--red {
+      color: $primary-warning;
+    }
+  }
+
+  &__link:last-child {
+    border-bottom: none;
+  }
+}

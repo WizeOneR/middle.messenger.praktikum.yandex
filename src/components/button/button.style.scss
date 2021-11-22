@@ -1,0 +1,44 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.button {
+  position: relative;
+
+  &__button {
+    margin-bottom: 1em;
+    padding: 1rem;
+    color: $primary-font-light;
+    font-size: 20px;
+    background-color: $primary-bg-button;
+    border: none;
+    width: 100%;
+
+    @include border-radius;
+    @include cursor;
+
+    &:hover {
+      @include opacity;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &__error-label {
+    position: absolute;
+    font-size: 0.7em;
+    color: $primary-warning;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+
+    & ~ label {
+      color: $primary-warning;
+    }
+  }
+}

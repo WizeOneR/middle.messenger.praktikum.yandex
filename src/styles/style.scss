@@ -1,12 +1,12 @@
 @import "variables";
-@import url('https://fonts.googleapis.com/css?family=Roboto:700,400&subset=latin,cyrillic');
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:wght@100;300;400;700&display=swap");
 
 * {
   box-sizing: border-box;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
   font-size: 16px;
 }
 
 body {
-  background-color: $primary-main-dark;
+  background-color: $primary-bg-main;
 }

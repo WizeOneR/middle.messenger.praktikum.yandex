@@ -1,0 +1,35 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.chat-list {
+  min-width: 400px;
+  height: 100%;
+  background-color: $neutrals-bg-dark;
+
+  &__wrapper {
+    height: calc(100vh - 52px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0 4px 4px;
+
+    &:hover {
+      overflow-y: auto;
+      padding-right: 0;
+    }
+
+    &::-webkit-scrollbar {
+      position: absolute;
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include border-radius;
+
+      background-color: $primary-border;
+    }
+  }
+
+  &__list {
+    margin-bottom: 0.5rem;
+  }
+}

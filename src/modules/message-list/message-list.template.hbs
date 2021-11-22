@@ -1,0 +1,18 @@
+<section class="message-list">
+
+    <section class="chat__messages">
+        <div class="messages">
+            <div class="messages__wrapper">
+                {{#if messages}}
+                    {{#each messages}}
+                        {{{message}}}
+                    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </section>
+
+    <div class="message-list__input">
+        {{{messageInput}}}
+    </div>
+</section>
