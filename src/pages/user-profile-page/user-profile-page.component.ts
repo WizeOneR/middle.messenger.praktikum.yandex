@@ -7,7 +7,7 @@ import avatar from '../../../static/images/user_image.jpg';
 import { BaseBlock } from '../../core/base-block';
 
 export class UserProfilePageComponent extends BaseBlock {
-  constructor(props: any) {
+  constructor(props: any | null) {
     super({
       ...props,
 

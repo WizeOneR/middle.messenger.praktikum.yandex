@@ -10,27 +10,27 @@ export interface InputProps {
 }
 
 export class InputComponent extends BaseBlock<InputProps> {
-  private _validators: any[] = [];
+  private validators: any[] = [];
 
   constructor(props: any, validators: any[] = []) {
     super({ ...props, validators });
-    this._validators = validators;
+    this.validators = validators;
   }
 
   componentAfterRender() {
-    this._element?.firstElementChild?.addEventListener(
+    this.element?.firstElementChild?.addEventListener(
       'focus',
       (event: InputEvent) => {
         this.validateInput(event);
       },
     );
-    this._element?.firstElementChild?.addEventListener(
+    this.element?.firstElementChild?.addEventListener(
       'blur',
       (event: InputEvent) => {
         this.validateInput(event);
       },
     );
-    this._element?.firstElementChild?.addEventListener(
+    this.element?.firstElementChild?.addEventListener(
       'input',
       (event: InputEvent) => {
         this.validateInput(event);
@@ -43,7 +43,7 @@ export class InputComponent extends BaseBlock<InputProps> {
   }
 
   validateInput(event: InputEvent) {
-    this._validators.forEach((validator) => {
+    this.validators.forEach((validator) => {
       const validatorResult = validator(event.target);
 
       Validator.createError(

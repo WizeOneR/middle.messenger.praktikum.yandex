@@ -1,6 +1,7 @@
 // Нельзя создавать экземпляр данного класса
 import { v4 as makeUUID } from 'uuid';
 import { EventBus } from './event-bus';
+import { EventProps } from '../modules/form/form.component';
 
 export enum Events {
     INIT = 'init',
@@ -19,15 +20,15 @@ export class BaseBlock<I = {}> {
 
   props: {[key: string]: any};
 
-  eventBus;
+  eventBus: EventBus;
 
-  events: any;
+  events: EventProps;
 
-  id;
+  id: string;
 
-  children;
+  children: BaseBlock;
 
-  constructor(propsAndChildren: I) {
+  constructor(propsAndChildren: I | null) {
     const eventBus = new EventBus();
     const { children, props } = this._getChildren(propsAndChildren);
 
@@ -49,10 +50,7 @@ export class BaseBlock<I = {}> {
 
     Object.entries(propsAndChildren).forEach(([key, value]) => {
       if (
-        (Array.isArray(value) && value[0]?.input)
-                || (Array.isArray(value) && value[0]?.button)
-                || (Array.isArray(value) && value[0]?.message)
-                || (Array.isArray(value) && value[0]?.chatCard)
+        (Array.isArray(value) && key !== 'links')
                 || value instanceof BaseBlock
       ) {
         children[key] = value;
@@ -129,11 +127,8 @@ export class BaseBlock<I = {}> {
     this.eventBus.emit(Events.FLOW_CDM);
   }
 
-  componentDidUpdate(oldProps: any, newProps: any) {
-    if (oldProps && newProps) {
-    }
-
-    return true;
+  componentDidUpdate(oldProps: any, newProps: any): boolean {
+    return oldProps && newProps;
   }
 
   setProps = (nextProps: any) => {

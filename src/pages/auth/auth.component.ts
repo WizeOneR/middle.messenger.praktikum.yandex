@@ -3,8 +3,8 @@ import template from './auth.template.hbs';
 import { BaseBlock } from '../../core/base-block';
 
 export interface AuthProps {
-    form: FormComponent;
-    events?: EventProps;
+  form: FormComponent;
+  events?: EventProps;
 }
 
 export class AuthComponent extends BaseBlock<AuthProps> {

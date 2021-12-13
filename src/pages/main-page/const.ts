@@ -20,5 +20,9 @@ export const mainFormLinks = {
       url: '500',
       linkName: '500',
     },
+    {
+      url: 'user-profile',
+      linkName: 'user-profile',
+    },
   ],
 };

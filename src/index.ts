@@ -8,10 +8,8 @@ import { errorTypes } from './pages/error/const';
 import { FormComponent } from './modules/form/form.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
-import { userProfileFormData } from './pages/user-profile-page/const';
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
-import { mainFormLinks } from './pages/main-page/const';
 import { ChatPageComponent } from './pages/chat/chat-page.component';
 import { Validator } from './core/utils/validator';
 
@@ -52,9 +50,7 @@ function renderErrorPage(errorType: number) {
 function renderMainPage() {
   render(
     rootSelector,
-    new MainPageComponent({
-      form: new FormComponent(mainFormLinks),
-    }),
+    new MainPageComponent(),
   );
 }
 
@@ -63,7 +59,7 @@ function renderChatPage() {
 }
 
 function renderUserProfile() {
-  render(rootSelector, new UserProfilePageComponent(userProfileFormData));
+  render(rootSelector, new UserProfilePageComponent({}));
 }
 
 function renderAuthPage() {
