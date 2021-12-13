@@ -1,7 +1,7 @@
 import './styles/style.scss';
 import 'normalize.css';
 import { render } from './core/utils/renderDOM';
-import MainPageComponent from './pages/main-page/main-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ErrorPageComponent } from './pages/error/error-page.component';
 import { ErrorForm } from './components/error-form/error-form.component';
 import { errorTypes } from './pages/error/const';

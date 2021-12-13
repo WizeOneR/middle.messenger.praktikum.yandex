@@ -3,15 +3,16 @@ export interface ValidatorResult {
 }
 
 export class Validator {
+  static errorLabelClass = 'input__error-label';
+
   static createError(target: HTMLInputElement, validMessage: string) {
     if (validMessage) {
       target.classList.add('invalid');
 
       if (
         target.nextElementSibling === null
-                || target.nextElementSibling.tagName !== 'DIV'
+                || target.nextElementSibling.className !== this.errorLabelClass
       ) {
-        target.setAttribute('invalid', 'true');
         const element = this.createErrorElement(validMessage);
         target.after(element);
       }
@@ -19,7 +20,7 @@ export class Validator {
 
     if (
       target.nextElementSibling !== null
-            && target.nextElementSibling.tagName === 'DIV'
+            && target.nextElementSibling.className === this.errorLabelClass
             && !validMessage
     ) {
       target.classList.remove('invalid');
@@ -30,7 +31,7 @@ export class Validator {
   static createErrorElement(message: string): HTMLElement {
     const errorElement = document.createElement('div');
 
-    errorElement.classList.add('input__error-label');
+    errorElement.classList.add(this.errorLabelClass);
     errorElement.textContent = message;
 
     return errorElement;
@@ -63,12 +64,12 @@ export class Validator {
   static loginValidator(input: HTMLInputElement): ValidatorResult | null {
     const regex = new RegExp(/^(?=[\S]+)(?=.*[^0-9 ].*)[a-zA-Z0-9_-]{3,20}$/);
 
-    return regex.test(input.value) ? null : { message: 'Поле не должно быть пустым' };
+    return regex.test(input.value) ? null : { message: 'Некорректный логин' };
   }
 
   static nameValidator(input: HTMLInputElement): ValidatorResult | null {
     const regex = new RegExp(/^[A-ZА-Я][A-Za-zА-Яа-я\\-]+$/);
 
-    return regex.test(input.value) ? null : { message: 'Поле не должно быть пустым' };
+    return regex.test(input.value) ? null : { message: 'Некорректные данные' };
   }
 }

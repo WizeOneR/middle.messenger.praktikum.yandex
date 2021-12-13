@@ -6,7 +6,7 @@ import { UserImageComponent } from '../../components/user-image/user-image.compo
 import avatar from '../../../static/images/user_image.jpg';
 import { BaseBlock } from '../../core/base-block';
 
-export default class UserProfilePageComponent extends BaseBlock {
+export class UserProfilePageComponent extends BaseBlock {
   constructor(props: any) {
     super({
       ...props,
