@@ -1,6 +1,6 @@
 import errorImage from '../../../static/images/error.svg';
 
-export const errorTypes: {[key: number]: any} = {
+export const errorTypes: {[key: number]: {[key: string]: string | number }} = {
   500: {
     error: 500,
     description: 'скоро все будет хорошо',
