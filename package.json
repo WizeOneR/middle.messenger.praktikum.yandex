@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel static/index.html -p 3000",
-    "dev": "parcel static/index.html -p 3000 --open",
-    "build": "parcel build static/index.html --no-minify",
-    "server": "node server.js"
+    "dev": "parcel static/index.html --no-cache -p 3000",
+    "build": "parcel build static/index.html --no-cache --no-minify",
+    "server": "node server.js",
+    "lint:es": "eslint --fix \"src/**/*.{ts,js}\"",
+    "lint:scss": "stylelint --config .stylelintrc.json --fix \"src/**/*.scss\""
   },
   "repository": {
     "type": "git",
@@ -23,15 +25,28 @@
   },
   "homepage": "https://github.com/WizeOneR/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@types/handlebars": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
     "express": "^4.17.1",
     "handlebars": "^4.7.7",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "path": "^0.12.7",
     "postcss": "^8.3.11",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "typescript": "^4.5.2"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@types/uuid": "^8.3.3",
+    "normalize.css": "^8.0.1",
+    "uuid": "^8.3.2"
   }
 }

@@ -1,0 +1,61 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 8px;
+    font-size: 1rem;
+    color: $primary-font-light;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  &__input:focus ~ .input__label,
+  &__input:not(:placeholder-shown) ~ .input__label {
+    top: -1rem;
+    font-size: 12px;
+  }
+
+  &__input:focus ~ .input__label {
+    color: $primary-input-focus;
+  }
+
+  &__input {
+    padding: 4px 0;
+    color: $primary-font-light;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    outline: none;
+    border: none;
+    background-color: rgb(0 0 0 / 0%);
+    border-bottom: 2px solid $primary-font-light;
+    z-index: 1001;
+
+    &:focus {
+      border-color: $primary-input-focus;
+    }
+  }
+
+  &__error-label {
+    position: absolute;
+    bottom: -1.5em;
+    text-align: left;
+    font-size: 0.7em;
+    color: $primary-warning;
+
+    & ~ label {
+      color: $primary-warning;
+    }
+  }
+}
+
+.invalid {
+  border-color: $primary-warning;
+}
